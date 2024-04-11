@@ -20,7 +20,7 @@ public class CarDAOImplementation implements CarDAO {
         session.close();
     }
     @Override
-    public void delete(long id) {
+    public void delete(int id) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         Car car = findById(id);
@@ -30,7 +30,7 @@ public class CarDAOImplementation implements CarDAO {
     }
 
     @Override
-    public void update(long id, long price) {
+    public void update(int id, int price) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         Car car = findById(id);
@@ -41,7 +41,7 @@ public class CarDAOImplementation implements CarDAO {
     }
 
     @Override
-    public Car findById(long id) {
+    public Car findById(int id) {
         Session session = sessionFactory.openSession();
         Car car = session.get(Car.class, id);
         session.close();

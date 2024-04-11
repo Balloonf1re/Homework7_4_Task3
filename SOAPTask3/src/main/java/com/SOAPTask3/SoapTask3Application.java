@@ -20,27 +20,27 @@ public class SoapTask3Application {
 		car.setModel(model);
 		CarDAOImplementation carDAOImplementation = new CarDAOImplementation();
 		carDAOImplementation.add(car);
-		return String.format("Model added: %s!" + model);
+		return String.format("Model added: " + model);
 	}
 	@GetMapping("/delete")
-	public String delete(@RequestParam(value = "id") long id){
+	public String delete(@RequestParam(value = "id") int id){
 		CarDAOImplementation carDAOImplementation = new CarDAOImplementation();
 		Car car = carDAOImplementation.findById(id);
 		String model = car.getModel();
 		carDAOImplementation.delete(id);
-		return String.format("Model deleted: %s!" + model);
+		return String.format("Model deleted: " + model);
 	}
 	@GetMapping("/update")
-	public String update(@RequestParam(value = "id") long id, @RequestParam(value = "price") long price){
+	public String update(@RequestParam(value = "id") int id, @RequestParam(value = "price") int price){
 		CarDAOImplementation carDAOImplementation = new CarDAOImplementation();
 		carDAOImplementation.update(id, price);
 		Car car = carDAOImplementation.findById(id);
-		return String.format("Model updated: %s!" + car.getModel());
+		return String.format("Model updated: " + car.getModel());
 	}
 	@GetMapping("/findById")
-	public String add(@RequestParam(value = "id") long id){
+	public String add(@RequestParam(value = "id") int id){
 		CarDAOImplementation carDAOImplementation = new CarDAOImplementation();
 		Car car = carDAOImplementation.findById(id);
-		return String.format("Model: %s!" + car.getModel());
+		return String.format("Model: " + car.getModel());
 	}
 }

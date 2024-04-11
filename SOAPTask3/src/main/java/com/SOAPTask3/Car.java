@@ -2,25 +2,22 @@ package com.SOAPTask3;
 
 import jakarta.persistence.*;
 
-@Entity(name = "com.SOAPTask3.Car")
+@Entity(name = "cars")
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    @Column(name = "id")
+    private int id;
     @Column(name = "mark_id")
-    private long markId;
+    private int markId;
     private String model;
-    private long price;
+    private int price;
 
-    public void setId(long id) {
-        this.id = id;
-    }
+
     public long getMarkId() {
         return markId;
     }
-    public void setMarkId(long markId) {
-        this.markId = markId;
-    }
+
     public String getModel() {
         return model;
     }
@@ -30,7 +27,13 @@ public class Car {
     public long getPrice() {
         return price;
     }
-    public void setPrice(long price) {
+    public void setId(int id) {
+        this.id = id;
+    }
+    public void setMarkId(int markId) {
+        this.markId = markId;
+    }
+    public void setPrice(int price) {
         this.price = price;
     }
 }

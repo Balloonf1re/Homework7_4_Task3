@@ -2,7 +2,7 @@ package com.SOAPTask3;
 
 public interface CarDAO {
     void add (Car car);
-    void delete(long id);
-    void update(long id, long price);
-    Car findById(long id);
+    void delete(int id);
+    void update(int id, int price);
+    Car findById(int id);
 }
